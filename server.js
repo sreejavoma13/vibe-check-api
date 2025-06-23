@@ -1,9 +1,9 @@
 import express from 'express'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
-import authRoutes from "./routes/auth"
-import vibeRoutes from "./routes/vibes"
-import connectDB from '../config/db.js'
+import auth from "./routes/auth.js"
+import vibe from "./routes/vibes.js"
+import connectDB from './config/db.js'
 
 dotenv.config(); 
 
@@ -13,8 +13,8 @@ app.use(express.json());
 
 connectDB()
 
-app.use("/api/v1/auth", authRoutes);
-app.use("/api/v1/vibes", vibeRoutes);   
+app.use("/api/v1/auth", auth);
+app.use("/api/v1/vibes", vibe);   
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {

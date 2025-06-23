@@ -16,6 +16,6 @@ const VibeSchema =new mongoose.Schema({
         trim: true,
      },
 })
-const Vibe=mongoose.model('User',VibeSchema);
+const Vibe=mongoose.model('Vibe',VibeSchema);
 export default Vibe;
 
